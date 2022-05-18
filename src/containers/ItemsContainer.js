@@ -5,6 +5,7 @@ import bread from "../assets/bread.jpg"
 import bananas from "../assets/bananas.jpg"
 import beans from "../assets/beans.jpeg"
 import CustomerContext from "../context/CustomerContext"
+import styled from "styled-components"
 
 const ItemsContainer = () => {
 
@@ -17,6 +18,8 @@ const ItemsContainer = () => {
         {"name" : "Bananas", "price" : 2, "description" : "a bunch of 5-7 bananas, all the same size", "image" : bananas},
         {"name" : "beans", "price" : 3, "description" : "Heinz Meanz Beanz - the original and best", "image" : beans},
     ]
+
+
 
 
     useEffect(() => {
@@ -33,10 +36,11 @@ const ItemsContainer = () => {
 
     return (
         <>
-            <h2>this is the items container</h2>
             <CustomerContext.Provider value={{customer}}>
-                <ItemsList items = {listOfItems} updateCustomerBasket = {updateCustomerBasket}/>
-                <BasketList items = {customer.basket}/>
+
+                    <ItemsList items = {listOfItems} updateCustomerBasket = {updateCustomerBasket}/>
+                    <BasketList items = {customer.basket}/>
+                    
             </CustomerContext.Provider>
 
         </>
